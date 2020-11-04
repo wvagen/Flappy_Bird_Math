@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TubeSpawner : MonoBehaviour {
+public class TubeSpawner : MonoBehaviour
+{
 
     public GameObject tube;
-	void Start () {
-        InvokeRepeating("GenerateTube", 0, 2);
-	}
+    void Start()
+    {
+        InvokeRepeating("GenerateTube", 0, 3);
+    }
 
 
     void GenerateTube()
     {
         if (Player.myRig.isKinematic) return;
-        Vector2 myPos = this.transform.position;
-        myPos.y = Random.Range(-1.5f, 1.5f);
-        GameObject tempTube = Instantiate(tube, myPos,
-            Quaternion.identity) as GameObject;
-        Destroy(tempTube,8);
+
+        GameObject tempTube = Instantiate(tube, this.transform.position,Quaternion.identity) as GameObject;
+        Destroy(tempTube, 8);
     }
 
 }
