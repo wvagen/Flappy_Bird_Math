@@ -12,7 +12,7 @@ public class TubeSpawner : MonoBehaviour {
 
     void GenerateTube()
     {
-        if (player.myRig.isKinematic) return;
+        if (Player.myRig.isKinematic) return;
         Vector2 myPos = this.transform.position;
         myPos.y = Random.Range(-1.5f, 1.5f);
         GameObject tempTube = Instantiate(tube, myPos,
