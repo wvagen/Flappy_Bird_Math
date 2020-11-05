@@ -748,6 +748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 519601557}
   finalScoreText: {fileID: 877012567}
+  bestScoreTxt: {fileID: 1788322093}
   gameOverPanel: {fileID: 221811823}
   tutoImg: {fileID: 1893066015}
   canvasAnimator: {fileID: 1618937963}
@@ -1962,7 +1963,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1780.4, y: 1006.2}
+  m_SizeDelta: {x: 1456.4496, y: 823.1181}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893066017
 MonoBehaviour:

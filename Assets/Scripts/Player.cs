@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
 
     public Text scoreText;
-    public Text finalScoreText;
+    public Text finalScoreText,bestScoreTxt;
     public GameObject gameOverPanel;
     public GameObject tutoImg;
     public Animator canvasAnimator;
@@ -80,6 +80,20 @@ public class Player : MonoBehaviour
         canvasAnimator.Play("GameOver");
         finalScoreText.text = score.ToString();
         scoreText.gameObject.SetActive(false);
+        BestScoreHandler();
+    }
+
+    void BestScoreHandler()
+    {
+        int bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        if (bestScore < score)
+        {
+            bestScore = score;
+            PlayerPrefs.SetInt("BestScore", bestScore);
+        }
+
+        bestScoreTxt.text = bestScore.ToString();
+
     }
 
     void OnTriggerEnter2D()
