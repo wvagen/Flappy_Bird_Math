@@ -13,9 +13,14 @@ public class Player : MonoBehaviour
     public Animator canvasAnimator;
     public AudioClip deathSound, flapSound, collectSound;
     public static Rigidbody2D myRig;
+
+    public float jumpForce = 650f;
+    
     Animator myAnim;
     AudioSource myAudio;
     bool isAlive = true;
+
+
 
     int score = 0;
 
@@ -64,7 +69,7 @@ public class Player : MonoBehaviour
         myAudio.PlayOneShot(flapSound);
         myAnim.Play("Tilt", -1, 0);
         myRig.velocity = Vector2.zero;
-        myRig.AddForce(Vector2.up * 650);
+        myRig.AddForce(Vector2.up * jumpForce);
     }
 
     void OnCollisionEnter2D()
