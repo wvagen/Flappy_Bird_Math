@@ -707,7 +707,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 4516452602930147288, guid: ed5a77ae6c05fd1479e2a21438fc04c6,
+  m_Sprite: {fileID: -7510903299643244522, guid: af59c703620ac8e4095fb836600fba8e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -745,6 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d8ebb48d9dd88489bde8dfc95dce41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgMat: {fileID: 2100000, guid: d91e54d05c75f7540a81d39fd50b7a87, type: 2}
   scoreText: {fileID: 519601557}
   finalScoreText: {fileID: 877012567}
   bestScoreTxt: {fileID: 1788322093}

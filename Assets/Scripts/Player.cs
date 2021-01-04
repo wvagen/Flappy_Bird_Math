@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
 
+    public Material bgMat;
+
     public Text scoreText;
     public Text finalScoreText,bestScoreTxt;
     public GameObject gameOverPanel;
@@ -20,7 +22,7 @@ public class Player : MonoBehaviour
     AudioSource myAudio;
     bool isAlive = true;
 
-
+    Vector2 offset = Vector2.zero;
 
     int score = 0;
 
@@ -49,6 +51,12 @@ public class Player : MonoBehaviour
         if (this.transform.position.y >= 5.5f ||
             this.transform.position.y <= -5.5f
             ) Die();
+
+        if (!myRig.isKinematic)
+        {
+            offset.x -= Time.deltaTime;
+            bgMat.SetTextureOffset("_MainTex", offset);
+        }
 
     }
 
