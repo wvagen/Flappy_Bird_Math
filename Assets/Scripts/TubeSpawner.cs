@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class TubeSpawner : MonoBehaviour
 {
-
     public GameObject tube;
+    public float tubeMarginHeight;
+
     void Start()
     {
-        InvokeRepeating("GenerateTube", 0, 3);
+        InvokeRepeating("GenerateTube", 0, 4);
     }
 
 
@@ -16,7 +17,7 @@ public class TubeSpawner : MonoBehaviour
     {
         if (Player.myRig.isKinematic) return;
 
-        GameObject tempTube = Instantiate(tube, this.transform.position,Quaternion.identity) as GameObject;
+        GameObject tempTube = Instantiate(tube, new Vector2(transform.position.x,transform.position.y + Random.Range(-tubeMarginHeight,tubeMarginHeight)),Quaternion.identity) as GameObject;
         Destroy(tempTube, 8);
     }
 
