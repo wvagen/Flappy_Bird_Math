@@ -24,14 +24,25 @@ public class Tube : MonoBehaviour
         int x = Random.Range(0, 10);
         int y = Random.Range(0, 10);
 
-        equationTxt.text = x.ToString() + " + " + y.ToString();
+        int result = 0;
 
-        int result = x + y;
+        if (Random.Range(0, 2) % 2 == 0)
+        {
+            result = x + y;
+            equationTxt.text = x.ToString() + " + " + y.ToString();
+        }
+        else
+        {
+            result = x - y;
+            equationTxt.text = x.ToString() + " - " + y.ToString();
+        }
+
+        
         int wrongRes = result;
         int wrongRate = Random.Range(-3, 3);
 
 
-        while (((wrongRate + result) == result) || (wrongRate + result) < 0)
+        while (((wrongRate + result) == result))
         {
             wrongRate = Random.Range(-3, 3);
         }

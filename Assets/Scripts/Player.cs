@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
 
         if (!myRig.isKinematic)
         {
-            offset.x -= Time.deltaTime;
+            offset.x -= Time.deltaTime * 0.1f;
             bgMat.SetTextureOffset("_MainTex", offset);
         }
 
