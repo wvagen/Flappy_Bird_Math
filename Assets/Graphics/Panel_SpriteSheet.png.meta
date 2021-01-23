@@ -1,7 +1,13 @@
 fileFormatVersion: 2
-guid: e75c1b51d72c55149a8bb075f6591a6f
+guid: 85ad7dabb961e894f80ed3218050101a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2538885188360620664
+    second: Panel_SpriteSheet_0
+  - first:
+      213: 6034092125397550927
+    second: Panel_SpriteSheet_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -34,13 +40,13 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -97,7 +103,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Panel_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2757
+        width: 2589
+        height: 2602
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885b34e6f5114ccd0800000000000000
+      internalID: -2538885188360620664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panel_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2589
+        height: 2356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f478d4c61d66db350800000000000000
+      internalID: 6034092125397550927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public Material bgMat;
 
     public Text scoreText;
-    public Text finalScoreText,bestScoreTxt;
+    public Text finalScoreText, bestScoreTxt;
     public GameObject gameOverPanel;
     public GameObject tutoImg;
     public Animator canvasAnimator;
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public static Rigidbody2D myRig;
 
     public float jumpForce = 650f;
-    
+
     Animator myAnim;
     AudioSource myAudio;
     bool isAlive = true;
@@ -38,16 +38,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (myRig.isKinematic)
-            {
-                myRig.isKinematic = false;
-                tutoImg.SetActive(false);
-                scoreText.gameObject.SetActive(true);
-            }
-            if (isAlive) jump();
-        }
         if (this.transform.position.y >= 5.5f ||
             this.transform.position.y <= -5.5f
             ) Die();
@@ -61,18 +51,18 @@ public class Player : MonoBehaviour
     }
 
 
-    public void Exit()
+    public void JumpOnClick()
     {
-        Application.Quit();
+        if (myRig.isKinematic)
+        {
+            myRig.isKinematic = false;
+            tutoImg.SetActive(false);
+            scoreText.gameObject.SetActive(true);
+        }
+        if (isAlive) Jump();
     }
 
-    public void Retry()
-    {
-
-        SceneManager.LoadScene(0);
-    }
-
-    private void jump()
+    public void Jump()
     {
         myAudio.PlayOneShot(flapSound);
         myAnim.Play("Tilt", -1, 0);
