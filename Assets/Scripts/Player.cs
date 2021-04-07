@@ -48,6 +48,15 @@ public class Player : MonoBehaviour
             bgMat.SetTextureOffset("_MainTex", offset);
         }
 
+        if (TubeSpawner.isLevel && score >= TubeSpawner.tubeGenerateAmount)
+        {
+            Die();
+            if (PlayerPrefs.GetInt("LevelPassed", 0) < TubeSpawner.levelIndex)
+            {
+                PlayerPrefs.SetInt("LevelPassed", TubeSpawner.levelIndex);
+            }
+        }
+
     }
 
 

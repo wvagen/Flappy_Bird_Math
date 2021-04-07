@@ -12,6 +12,9 @@ public class Tube : MonoBehaviour
 
     public Collider2D upperCollider,downCollider;
 
+    public int minRange, maxRange;
+
+
     // Use this for initialization
     void Start()
     {
@@ -21,8 +24,8 @@ public class Tube : MonoBehaviour
 
     void GenerateEquation()
     {
-        int x = Random.Range(0, 10);
-        int y = Random.Range(0, 10);
+        int x = Random.Range(TubeSpawner.isLevel ? minRange : 0, TubeSpawner.isLevel ? maxRange : 10);
+        int y = Random.Range(TubeSpawner.isLevel ? minRange : 0, TubeSpawner.isLevel ? maxRange : 10);
 
         int result = 0;
 

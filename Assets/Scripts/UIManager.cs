@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
 {
 
     public GameObject InstructionPanel;
+    public GameObject Level_Mode_Panel;
+    public GameObject Level_Selection_Panel;
 
     public GameObject nextInstructionPanel;
     public GameObject previousInstructionPanel;
@@ -44,7 +46,7 @@ public class UIManager : MonoBehaviour
 
         soundImg.sprite = isSoundEnabled ? soundOnSprite : soundOffSprite;
 
-        AudioListener.pause = !isSoundEnabled ;
+        AudioListener.pause = !isSoundEnabled;
     }
 
     public void Exit()
@@ -52,14 +54,31 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void Close_Level_Mode_Panel()
+    {
+        Level_Mode_Panel.SetActive(false);
+        Level_Selection_Panel.SetActive(false);
+    }
+
     public void Quit_To_Main_Menu()
     {
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void Inifinite_Mode()
+    {
+        TubeSpawner.isLevel = false;
+        SceneManager.LoadScene("Main Game");
+    }
+
+    public void Level_Selection()
+    {
+        Level_Selection_Panel.SetActive(true);
+    }
+
     public void Start_Game()
     {
-        SceneManager.LoadScene("Main Game");
+        Level_Mode_Panel.SetActive(true);
     }
 
 }
