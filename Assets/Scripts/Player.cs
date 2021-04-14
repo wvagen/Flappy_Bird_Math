@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 
     public Text scoreText;
     public Text finalScoreText, bestScoreTxt;
-    public GameObject gameOverPanel;
+    public GameObject gameOverPanel, losePanel;
     public GameObject tutoImg;
     public Animator canvasAnimator;
     public AudioClip deathSound, flapSound, collectSound;
@@ -40,7 +40,11 @@ public class Player : MonoBehaviour
     {
         if (this.transform.position.y >= 5.5f ||
             this.transform.position.y <= -5.5f
-            ) Die();
+            )
+        {
+            if (TubeSpawner.isLevel) Lose();
+            else Die();
+        }
 
         if (!myRig.isKinematic)
         {
@@ -51,7 +55,7 @@ public class Player : MonoBehaviour
         if (TubeSpawner.isLevel && score >= TubeSpawner.tubeGenerateAmount)
         {
             Die();
-            if (PlayerPrefs.GetInt("LevelPassed", 0) < TubeSpawner.levelIndex)
+            if (PlayerPrefs.GetInt("LevelPassed", 1) < TubeSpawner.levelIndex)
             {
                 PlayerPrefs.SetInt("LevelPassed", TubeSpawner.levelIndex);
             }
@@ -81,7 +85,15 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
-        Die();
+        if (TubeSpawner.isLevel)
+        {
+            Lose();
+        }
+        else
+        {
+            Die();
+        }
+
     }
     void Die()
     {
@@ -94,6 +106,16 @@ public class Player : MonoBehaviour
         scoreText.gameObject.SetActive(false);
         BestScoreHandler();
     }
+
+    void Lose()
+    {
+        if (isAlive == false) return;
+        isAlive = false;
+        myAudio.PlayOneShot(deathSound);
+        gameOverPanel.SetActive(true);
+        losePanel.SetActive(true);
+    }
+
 
     void BestScoreHandler()
     {

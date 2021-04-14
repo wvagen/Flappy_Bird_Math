@@ -13,7 +13,7 @@ public class Level : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("LevelPassed", 0) < levelIndex)
+        if (PlayerPrefs.GetInt("LevelPassed", 0)< levelIndex)
         {
             lockedImg.SetActive(true);
             myBtn.enabled = false;
@@ -24,7 +24,7 @@ public class Level : MonoBehaviour
     {
         TubeSpawner.isLevel = true;
         TubeSpawner.levelIndex = this.levelIndex;
-        SceneManager.LoadScene("Level_" + (levelIndex + 1).ToString());
+        SceneManager.LoadScene("Level_" + (levelIndex).ToString());
     }
 
 

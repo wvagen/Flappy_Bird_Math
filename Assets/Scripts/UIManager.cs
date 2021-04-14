@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Sprite soundOnSprite, soundOffSprite;
 
     bool isSoundEnabled = true;
+
     public void Display_Info_Panel()
     {
         InstructionPanel.SetActive(true);
@@ -58,6 +59,19 @@ public class UIManager : MonoBehaviour
     {
         Level_Mode_Panel.SetActive(false);
         Level_Selection_Panel.SetActive(false);
+    }
+
+    public void NextLvlBtn()
+    {
+        if (TubeSpawner.levelIndex < TubeSpawner.levelsAmount - 1)
+        {
+            TubeSpawner.levelIndex++;
+            SceneManager.LoadScene("Level_" + (TubeSpawner.levelIndex));
+        }
+        else
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
     }
 
     public void Quit_To_Main_Menu()

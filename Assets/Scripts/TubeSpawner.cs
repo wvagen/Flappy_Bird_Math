@@ -14,6 +14,7 @@ public class TubeSpawner : MonoBehaviour
     public static bool isLevel = true;
     public static int tubeGenerateAmount;
     public static int levelIndex = 0;
+    public static int levelsAmount = 9;
 
     bool isGenerated = false;
 
