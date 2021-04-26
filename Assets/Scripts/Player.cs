@@ -130,11 +130,19 @@ public class Player : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        score++;
-        myAudio.PlayOneShot(collectSound);
-        scoreText.text = score.ToString();
+        if (col.gameObject.tag.Equals("enemy"))
+        {
+            Lose();
+        }
+        else
+        {
+            score++;
+            myAudio.PlayOneShot(collectSound);
+            scoreText.text = score.ToString();
+        }
+
     }
 
 }

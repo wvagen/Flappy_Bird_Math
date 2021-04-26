@@ -10,6 +10,8 @@ public class TubeSpawner : MonoBehaviour
     public int Level_Generate_Amount = 0;
 
     public int minRange, maxRange;
+    public int enemySpawnerAmounts;
+    public float enemySpawnerTimeRate;
 
     public static bool isLevel = true;
     public static int tubeGenerateAmount;
