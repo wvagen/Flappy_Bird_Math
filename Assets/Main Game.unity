@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.7019608, g: 0.7019608, b: 0.7019608, a: 0.39215687}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1066,6 +1066,8 @@ MonoBehaviour:
   Level_Generate_Amount: 0
   minRange: 0
   maxRange: 0
+  enemySpawnerAmounts: 0
+  enemySpawnerTimeRate: 0
 --- !u!4 &732903083
 Transform:
   m_ObjectHideFlags: 0
